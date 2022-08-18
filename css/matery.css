@@ -34,7 +34,7 @@
 }
 
 body {
-    background-color: #eaeaea;
+    background-color: #17d69a;
     margin: 0;
     color: #34495e;
     overflow-x: hidden;
@@ -45,7 +45,9 @@ h1 {
     margin: 48px 0 22px -5px;
     font-size: 2.0rem;
     font-weight: bold;
+    /* color:rgba(13, 1, 17, 0.956) */
     line-height: 2.0rem;
+    /* color: #000; */
 }
 
 h2 {
@@ -241,7 +243,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #e81184 0%, #eb3c5f 100%);
 }
 
 .text-color {
@@ -550,10 +552,10 @@ header .go-back i {
     height: 40vh !important;
 }
 
-.bg-cover:after {
+/* .bg-cover:after {
     -webkit-animation: rainbow 60s infinite;
     animation: rainbow 60s infinite;
-}
+} */
 
 .bg-cover:before,
 .bg-cover:after {
