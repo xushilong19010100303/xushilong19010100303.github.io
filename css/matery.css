@@ -34,7 +34,9 @@
 }
 
 body {
-    background-color: #17d69a;
+    background: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35) ) 0% 0% /    
+     cover, url("http://pic1.win4000.com/wallpaper/2020-03-26/5e7c4f9ab17ad.jpg"), url("http://pic1.win4000.com/wallpaper/2020-03-26/5e7c4f9ab17ad.jpg") 0px 0px;
+    /* background-color: #17d69a; */
     margin: 0;
     color: #34495e;
     overflow-x: hidden;
@@ -552,12 +554,12 @@ header .go-back i {
     height: 40vh !important;
 }
 
-/* .bg-cover:after {
+.bg-cover:after {
     -webkit-animation: rainbow 60s infinite;
     animation: rainbow 60s infinite;
-} */
+}
 
-.bg-cover:before,
+/* .bg-cover:before,
 .bg-cover:after {
     position: absolute;
     z-index: 1;
@@ -567,7 +569,7 @@ header .go-back i {
     left: 0;
     top: 0;
     content: "";
-}
+} */
 
 .bg-cover .container {
     position: relative;
