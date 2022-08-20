@@ -4,13 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="牛客-华为机试笔记, 天下无敌">
-    <meta name="description" content="HJ5 进制转换固定写法     import java.util.Scanner
-     Scanner in = new Scanner(System.in);
-     String str = in.nextLine();
-
-
-n">
+    <meta name="keywords" content="笔试遇到的问题合集, 天下无敌">
+    <meta name="description" content="Thouthworks三道就做出来俩，虽然挺简单的但是考的List Integer类型我不会哈哈哈
+一、算法复杂度问题比较O($N!$) &amp;gt; O($2^N$) &amp;gt; O($N^2$) &amp;gt; O($N*logN$) &amp;gt; O">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +18,7 @@ n">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>牛客-华为机试笔记 | 天下无敌</title>
+    <title>笔试遇到的问题合集 | 天下无敌</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -372,12 +368,12 @@ n">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">牛客-华为机试笔记</h1>
+                    <h1 class="description center-align post-title">笔试遇到的问题合集</h1>
                 </div>
             </div>
         </div>
@@ -413,7 +409,7 @@ n">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-18
+                    2022-08-20
                 </div>
                 
 
@@ -427,7 +423,7 @@ n">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    228
+                    753
                 </div>
                 
 
@@ -449,35 +445,130 @@ n">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="HJ5-进制转换"><a href="#HJ5-进制转换" class="headerlink" title="HJ5 进制转换"></a>HJ5 进制转换</h2><h4 id="固定写法"><a href="#固定写法" class="headerlink" title="固定写法"></a>固定写法</h4><pre class=" language-java"><code class="language-java">     <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Scanner
-     Scanner in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
-     String str <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <h2 id="Thouthworks"><a href="#Thouthworks" class="headerlink" title="Thouthworks"></a>Thouthworks</h2><p>三道就做出来俩，虽然挺简单的但是考的List Integer类型我不会哈哈哈</p>
+<h3 id="一、算法复杂度问题"><a href="#一、算法复杂度问题" class="headerlink" title="一、算法复杂度问题"></a>一、算法复杂度问题</h3><h4 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h4><p>O($N!$) &gt; O($2^N$) &gt; O($N^2$) &gt; O($N*logN$) &gt; O($N$) &gt; O($logN$) &gt; O($1$)</p>
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><h5 id="O-N"><a href="#O-N" class="headerlink" title="O($N$)"></a>O($N$)</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span>；i <span class="token operator">&lt;</span> n <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
+<p>执行一次 i = 1 和 N 次 </p>
 <ul>
-<li>nextLine 读取到的是换行符</li>
-<li>next  读取到的是空格或换行符</li>
-<li>hasNext 判断是否有非空字符</li>
-<li>hasNextLine 判断是否有下一行</li>
+<li>i&lt;n </li>
+<li>i++</li>
+<li>x++<br>共 <strong>3N+1</strong> 次<br><strong>N无限大时 O(3N+1)； 更接近O(N)</strong></li>
 </ul>
-<h4 id="十六进制转十进制"><a href="#十六进制转十进制" class="headerlink" title="十六进制转十进制"></a>十六进制转十进制</h4><h5 id="从右到左-第i位数字（A–F对应10–15）乘以-16-i-求和即为所得。"><a href="#从右到左-第i位数字（A–F对应10–15）乘以-16-i-求和即为所得。" class="headerlink" title="从右到左 第i位数字（A–F对应10–15）乘以$16^i$  求和即为所得。"></a>从右到左 第i位数字（A–F对应10–15）乘以$16^i$  求和即为所得。</h5><p>例如25A=10×$16^0$+5×$16^1$+2×$16^2$<br>即25A(16) = 602 (10)</p>
-<p>点击<a target="_blank" rel="noopener" href="https://tool.oschina.net/hexconvert/">这里</a>验证结果是否正确。</p>
 <hr>
-<h5 id="java偷懒法"><a href="#java偷懒法" class="headerlink" title="java偷懒法"></a>java偷懒法</h5><pre class=" language-java"><code class="language-java">     <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0x16</span>；
-     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-     <span class="token comment" spellcheck="true">//输出20；</span>
+<h5 id="O-N-2"><a href="#O-N-2" class="headerlink" title="O($N^2$)"></a>O($N^2$)</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span>；i <span class="token operator">&lt;</span> n <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span>；i <span class="token operator">&lt;</span> n <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n <span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<h4 id="字符串倒转"><a href="#字符串倒转" class="headerlink" title="字符串倒转"></a>字符串倒转</h4><pre class=" language-java"><code class="language-java">     String str <span class="token operator">=</span> <span class="token string">"Abc123"</span>
-     StringBuffer str1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-     str <span class="token operator">=</span> str1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>共 <strong>$n^2+n$</strong> 次<br>O($N^2+N$) ==&gt; O($N^2$) </p>
+<hr>
+<h5 id="O-1"><a href="#O-1" class="headerlink" title="O(1)"></a>O(1)</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> z <span class="token operator">=</span> x<span class="token punctuation">;</span>
+x <span class="token operator">=</span> y<span class="token punctuation">;</span>
+y <span class="token operator">=</span> z<span class="token punctuation">;</span>
 </code></pre>
-<p>需要注意StringBuffer类需要通过toString方法才可以变回原来的字符串</p>
-<h4 id="获取第i个字符并转数字"><a href="#获取第i个字符并转数字" class="headerlink" title="获取第i个字符并转数字"></a>获取第i个字符并转数字</h4><pre class=" language-java"><code class="language-java">          <span class="token keyword">char</span> a <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">//   注意这里类型为char了 如果要赋值需要单引号</span>
-          <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> a <span class="token operator">-</span><span class="token string">'0'</span><span class="token punctuation">;</span>
-          <span class="token keyword">int</span> c <span class="token operator">=</span> a<span class="token operator">-</span><span class="token number">48</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//   48 是 0 的ASCII码</span>
+<p>无论$x,y$怎么变化，复杂度都不变。</p>
+<hr>
+<h5 id="O-logN"><a href="#O-logN" class="headerlink" title="O($logN$)"></a>O($logN$)</h5><pre class=" language-java"><code class="language-java"> <span class="token keyword">int</span> <span class="token number">1</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ <span class="token keyword">while</span><span class="token punctuation">(</span>i <span class="token operator">&lt;</span> n<span class="token punctuation">)</span>
+ <span class="token punctuation">{</span>
+    i <span class="token operator">=</span> i <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
 </code></pre>
+<p>循环$k = \log_2 N$次 停止循环。</p>
+<hr>
+<h5 id="O-n-logN"><a href="#O-n-logN" class="headerlink" title="O($n*logN$)"></a>O($n*logN$)</h5><p>嵌套 $n 与 logN$ 即可</p>
+<h3 id="二、转化为ArrayList解决问题"><a href="#二、转化为ArrayList解决问题" class="headerlink" title="二、转化为ArrayList解决问题"></a>二、转化为ArrayList解决问题</h3><h4 id="导包和固定写法"><a href="#导包和固定写法" class="headerlink" title="导包和固定写法"></a>导包和固定写法</h4><pre class=" language-java"><code class="language-java">        <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span> 
+        ArrayList<span class="token operator">&lt;</span>Integer<span class="token operator">></span> num <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>　 
+     <span class="token comment" spellcheck="true">// 可以是 Integer String Float等等，即引用数据类型</span>
+</code></pre>
+<hr>
+<h4 id="定义各种数据类型"><a href="#定义各种数据类型" class="headerlink" title="定义各种数据类型"></a>定义各种数据类型</h4><p>__String__其实就是每个元素都是字符串类型的数组</p>
+<pre class=" language-java"><code class="language-java">          ————基本数据类型————
+      <span class="token punctuation">(</span><span class="token keyword">static</span><span class="token punctuation">)</span> <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//定义并初始化</span>
+      <span class="token keyword">boolean</span> b<span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//定义不初始化，默认值是0,null,false之类</span>
+      Integer a<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">// </span>
+      <span class="token keyword">final</span> <span class="token keyword">float</span> PI <span class="token operator">=</span> <span class="token number">3.14</span>；<span class="token comment" spellcheck="true">//常量</span>
+      <span class="token comment" spellcheck="true">//int 0 开头表示八进制 0x开头表示十六进制</span>
+      <span class="token comment" spellcheck="true">// char'' String"" 也是这么定义的</span>
 
+          ————引用数据类型————
+        <span class="token comment" spellcheck="true">//类、接口、数组</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+            String<span class="token punctuation">[</span><span class="token punctuation">]</span>  arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//也可以int char Integer boolean都可以</span>
+            String<span class="token punctuation">[</span><span class="token punctuation">]</span>  arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"!"</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 
+            ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>可不写<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//注意这个带括号</span>
+    <span class="token punctuation">}</span> 
+    <span class="token comment" spellcheck="true">//main函数，主要在这里面写东西</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">int</span> a<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token comment" spellcheck="true">//方法，必须带()</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="String-String-Int-和-ArrayList转换"><a href="#String-String-Int-和-ArrayList转换" class="headerlink" title="String[] String Int 和 ArrayList转换"></a>String[] String Int 和 ArrayList转换</h4><p>list 可以打印出来 [ a , 4 , ! ]<br>String 可打印为 a , 4 , !<br>String[] 可打印出 arr[ 索引 ]</p>
+<pre class=" language-java"><code class="language-java">     <span class="token comment" spellcheck="true">//String[] 转 ArrayList   arr1==>list 主要就是Array自带的aslist</span>
+     String<span class="token punctuation">[</span><span class="token punctuation">]</span> arr1 <span class="token operator">=</span> String <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+     ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    
+     <span class="token comment" spellcheck="true">//ArrayList 转 String[]   list==>arr和arr1</span>
+     String<span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">toArray</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+     <span class="token comment" spellcheck="true">//arr1用于接收arr，且完全覆盖，比arr长出来的部分是null</span>
+
+     <span class="token comment" spellcheck="true">//String 转 ArrayList 实际上是先转化为String[]</span>
+     ArrayList list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span>‘<span class="token punctuation">,</span>’<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+
+     <span class="token comment" spellcheck="true">//ArrayList 转 String     join方法表示拼接</span>
+     String str<span class="token operator">=</span> StringUtils<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>list<span class="token punctuation">,</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token comment" spellcheck="true">//Arraylist转 int[]</span>
+     <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mapToInt</span><span class="token punctuation">(</span>Integer<span class="token operator">:</span><span class="token operator">:</span>valueOf<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token comment" spellcheck="true">//int[]转list </span>
+     List<span class="token operator">&lt;</span>Integer<span class="token operator">></span> list1 <span class="token operator">=</span> Arrays<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">boxed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span>Collectors<span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<h4 id="ArrayList常用方法"><a href="#ArrayList常用方法" class="headerlink" title="ArrayList常用方法"></a>ArrayList常用方法</h4><pre class=" language-java"><code class="language-java">      ArrayList<span class="token operator">&lt;</span>Integer<span class="token operator">></span> num <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>　 
+        num<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        num<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        num<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//拼接另一个ArrayList用num.addAll(num2)</span>
+        num<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//按照索引删除，不会删除元素2</span>
+        num<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        num<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Collections<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        num<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">98</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        num<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="三、牛客华为机试"><a href="#三、牛客华为机试" class="headerlink" title="三、牛客华为机试"></a>三、牛客华为机试</h3><h4 id="HJ6-质数因子"><a href="#HJ6-质数因子" class="headerlink" title="HJ6 质数因子"></a>HJ6 质数因子</h4><p><strong>最多只有一个质数因子大于本身的平方根</strong><br>递归</p>
+<pre class=" language-java"><code class="language-java">
+    <span class="token keyword">long</span> num<span class="token punctuation">;</span>
+    <span class="token keyword">long</span> k <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span> Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">long</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> k<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>num <span class="token operator">%</span> i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            num <span class="token operator">/=</span> i<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token string">""</span><span class="token operator">:</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="HJ7-取近似值"><a href="#HJ7-取近似值" class="headerlink" title="HJ7 取近似值"></a>HJ7 取近似值</h4><p>这题很像今天的科大讯飞笔试题<br>学了一个很巧妙的解法</p>
+<pre class=" language-java"><code class="language-java"> <span class="token keyword">float</span> number<span class="token punctuation">;</span>
+ System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">(</span>number <span class="token operator">+</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="不做了今天太累了，睡觉了先！"><a href="#不做了今天太累了，睡觉了先！" class="headerlink" title="不做了今天太累了，睡觉了先！"></a>不做了今天太累了，睡觉了先！</h3>
                 
             </div>
             <hr/>
@@ -503,7 +594,7 @@ n">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xsl66.cn/2022/081847630.html">http://xsl66.cn/2022/081847630.html</a>
+                    <a href="http://xsl66.cn/2022/082029846.html">http://xsl66.cn/2022/082029846.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -613,7 +704,7 @@ n">
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Thu Aug 18 2022 14:25:45 GMT+0900',
+    id: 'Sat Aug 20 2022 13:29:53 GMT+0900',
     owner: '',
     repo: '',
     oauth: {
@@ -646,9 +737,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/082029846.html">
                     <div class="card-image">
@@ -666,9 +758,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -677,6 +769,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -687,13 +780,13 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/0817undefined.html">
+                <a href="/2022/081847630.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="重新搭建的博客">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="牛客-华为机试笔记">
                         
-                        <span class="card-title">重新搭建的博客</span>
+                        <span class="card-title">牛客-华为机试笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -704,7 +797,7 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-18
                             </span>
                         <span class="publish-author">
                             
