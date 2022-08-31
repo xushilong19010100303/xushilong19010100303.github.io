@@ -430,7 +430,7 @@ HTML5新特性">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    3.8k
                 </div>
                 
 
@@ -708,6 +708,15 @@ arr.map((a,b,c)=>{ a*=2 })
 <h4 id="document-write-和-innerHTML"><a href="#document-write-和-innerHTML" class="headerlink" title="document.write 和 innerHTML"></a>document.write 和 innerHTML</h4><blockquote>
 <p>write 不会前后覆盖，如果script标签写在最后会阻塞所有前面解析的html 是方法<br>元素.innerHTML 直接填充 会覆盖 是属性</p>
 </blockquote>
+<hr>
+<h4 id="求交叉并补集"><a href="#求交叉并补集" class="headerlink" title="求交叉并补集"></a>求交叉并补集</h4><p><code>var e = a.filter(function(v){ return !(b.indexOf(v) &gt; -1) })</code><br>        <code>.concat(b.filter(function(v){ return !(a.indexOf(v) &gt; -1)}))</code><br>        // a里面的所有b(index&gt;-1表示所有) 和 b里面的所有a<br><code>let e = [...a.filter(x =&gt; !sb.has(x)), ...b.filter(x =&gt; !sa.has(x))];</code><br>//es6新特性 Set a和b </p>
+<hr>
+<h4 id="获取当前页面url"><a href="#获取当前页面url" class="headerlink" title="获取当前页面url"></a>获取当前页面url</h4><ul>
+<li>window.location.href</li>
+</ul>
+<hr>
+<h4 id="逆序输出"><a href="#逆序输出" class="headerlink" title="逆序输出"></a>逆序输出</h4><p><code>split("").reverse().join("")</code></p>
+<p><code>var nstr = "";</code><br><code> for (var x = str.length-1; x &gt;= 0; x--) { nstr+=str.charAt(x) }</code></p>
 <h3 id="手写xxx"><a href="#手写xxx" class="headerlink" title="手写xxx"></a>手写xxx</h3><h4 id="手写instanceof"><a href="#手写instanceof" class="headerlink" title="手写instanceof"></a>手写instanceof</h4><pre class=" language-Javascript"><code class="language-Javascript">function instanceOf(child, father) { 
     let R = father.prototype; // 取右表达式的 prototype 值
     L = child.__proto__; // 取左表达式的__proto__值
@@ -735,7 +744,7 @@ arr_after = Array.from(mySet);
 </blockquote>
 <hr>
 <h5 id="indexof、includs方法"><a href="#indexof、includs方法" class="headerlink" title="indexof、includs方法"></a>indexof、includs方法</h5><blockquote>
-<p>创建一个结果数组，遍历原数组，在原数组里对比原数组index或include，没有就存入<code>array.push(arr[i])</code> </p>
+<p>创建一个结果数组，遍历原数组，在原数组里对比原数组index或include，没有就存入<code>array.push(arr[i])</code><br>这里注意indexOf可以判断索引是否为-1 或第i个是否为i 两种方法</p>
 </blockquote>
 <h5 id="sort方法"><a href="#sort方法" class="headerlink" title="sort方法"></a>sort方法</h5><blockquote>
 <p>原数组排序<code>arr.sort()</code>循环对比，存入新数组<br>不能比对NaN和{}</p>
@@ -746,7 +755,7 @@ arr_after = Array.from(mySet);
     setTimeOut(()=>{},3000) //箭头函数简写
 </code></pre>
 <blockquote>
-<p>执行代码先放在调用栈 setTimeOut是一个API 表示3s后执行 就直接从栈里移除了<br>  3秒以后 （此时同步一定执行完了）Event Loop循环找回调函数</p>
+<p>执行代码先放在调用栈 setTimeOut是一个API 表示3s后执行 就直接从栈里移除 放入消息队列<br>  3秒以后 找微任务队列的 压入调用栈执行 最后Event Loop循环消息队列找回调函数 </p>
 </blockquote>
 <blockquote>
 <p>回调地狱 指多个setTimeOut嵌套 可读性变差</p>
@@ -822,6 +831,271 @@ arr_after = Array.from(mySet);
 <p>link除了CSS图片还能引用图片音乐<br>link在页面加载时加载，@import页面加载完<br>import有的浏览器不支持</p>
 </blockquote>
 <p> <code>&lt;link href="index.css" rel="stylesheet"&gt;</code><br><code>&lt;style type="text/css"&gt;  @import url(index.css);  &lt;/style&gt;</code></p>
+<hr>
+<h4 id="继承-1"><a href="#继承-1" class="headerlink" title="继承"></a>继承</h4><blockquote>
+<ul>
+<li>有继承的 font系列 text-align color除a标签 visibilty list-stylesheet</li>
+<li>无继承的 display vertical-align text-装饰阴影 盒子模型的margin border padding等<br>  背景 定位 content</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h4><blockquote>
+<ul>
+<li>W3C模型(标准)width 100px; padding 10px; border 1px</li>
+<li>IE模型(怪异) width 78px;<br><code>dom.offsetWidth/offsetHeight</code> js取当前的宽高<br><code>box-sizing: border-box</code>  切换怪异模型，content-box默认、</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="BFC-块级格式化"><a href="#BFC-块级格式化" class="headerlink" title="BFC 块级格式化"></a>BFC 块级格式化</h4><p><code>position : absolute/fixed</code><br><code>float : left  ===&gt; overflow:auto</code><br><code> display : flex / inline-block</code><br><code> HTML table</code></p>
+<hr>
+<h4 id="样式优先级"><a href="#样式优先级" class="headerlink" title="样式优先级"></a>样式优先级</h4><blockquote>
+<p>选择器： ID &gt; Class/属性/伪类 &gt; 标签/伪元素<br>行内 &gt; 选择器 !important最高<br>(0,0,0,0) 分别上述四个，大的优先级高</p>
+</blockquote>
+<hr>
+<h4 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h4><blockquote>
+<ol>
+<li><code>padding-top/buttom</code>        父元素必须不固定高度</li>
+<li><code>line-height</code> 配合<code>margin:0</code>; 但不能用于多行文字</li>
+<li>父元素<code>display:table</code> 子元素<code>table-cell</code>且<code>vertical-align:middle'</code></li>
+<li><code>display:flex/grid</code> <code>jastify-content:center</code> 兼容性不好 IE9+</li>
+<li><code>position:absolute</code> <code>top:50%</code> <code>transform:translate(-50%)</code></li>
+</ol>
+</blockquote>
+<hr>
+<h4 id="画图形"><a href="#画图形" class="headerlink" title="画图形"></a>画图形</h4><blockquote>
+<p>等腰</p>
+</blockquote>
+<pre class=" language-css"><code class="language-css"><span class="token selector">div </span><span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token property">border</span><span class="token punctuation">:</span><span class="token number">100</span>px solid transparent<span class="token punctuation">;</span>
+        <span class="token property">border-bottom-color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>圆形<br><code>border-radius=50%+</code></p>
+</blockquote>
+<hr>
+<h4 id="多栏布局"><a href="#多栏布局" class="headerlink" title="多栏布局"></a>多栏布局</h4><blockquote>
+<p>两栏为例</p>
+</blockquote>
+<ol>
+<li>左盒子<code>float:left</code> 右盒子<code>margin-left=width(左)</code></li>
+<li>右盒子BFC <code>overflow:hidden</code> 或 position</li>
+<li>主盒子<code>display:flex</code> 右盒子<code>flex:1</code>自动填充左盒子</li>
+<li>主盒子<code>display:table</code> 左盒子加宽 俩都<code>table-ceil</code><blockquote>
+<p>总结 自己计算margin、BFC、flex:1自适应、table、</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><ol>
+<li>末尾选择添加空元素，<code>clear:both</code></li>
+<li>BFC <code>overflow:auto</code>或整个父元素float</li>
+<li>伪元素</li>
+</ol>
+<pre class=" language-css"><code class="language-css"><span class="token selector">div<span class="token pseudo-element">::after</span></span><span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span><span class="token string">""</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">/*空*/</span>
+    <span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">/*插入伪元素是行内元素，要转化块*/</span>
+    <span class="token property">clear</span><span class="token punctuation">:</span>both<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<h4 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h4><blockquote>
+<p>em相对的 浏览器默认16px 所以<code>1em=16px</code><br>但也可以<code>div{font-size: 50%;}</code> <code>1em=8px</code>本身px&gt;父em<br>rem r表示root <code>html{font-size:20px}</code></p>
+</blockquote>
+<hr>
+<h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><h4 id="cookie-localStorage-sessionStorage"><a href="#cookie-localStorage-sessionStorage" class="headerlink" title="cookie localStorage sessionStorage"></a>cookie localStorage sessionStorage</h4><blockquote>
+<p>cookie数据始终在同源的http请求中携带（即使不需要）小于4k<br>sessionStorage：当前浏览器窗口关闭之前有效 有效区域仅该窗口<br>localStorage：始终有效，窗口或浏览器关闭也存在<br>cookie：只在设置的cookie过期时间之前有效</p>
+</blockquote>
+<blockquote>
+<p>localStorage不可跨域 不可被爬取 读取字符串</p>
+</blockquote>
+<hr>
+<h4 id="输入url发生了什么"><a href="#输入url发生了什么" class="headerlink" title="输入url发生了什么"></a>输入url发生了什么</h4><ul>
+<li>缓存里找url</li>
+<li>查询DNS(url=&gt;ip)本质是数据库</li>
+<li>TCP三次握手</li>
+<li>HTTP发起请求</li>
+<li>服务器处理请求，浏览器接收响应</li>
+<li>渲染页面 四次挥手</li>
+</ul>
+<hr>
+<h4 id="浏览器渲染页面步骤"><a href="#浏览器渲染页面步骤" class="headerlink" title="浏览器渲染页面步骤"></a>浏览器渲染页面步骤</h4><ul>
+<li>HTML转为DOM树</li>
+<li>CSS解析为CSSOM树 同步的</li>
+<li>js标签一般写最后</li>
+</ul>
+<hr>
+<h4 id="重绘重排"><a href="#重绘重排" class="headerlink" title="重绘重排"></a>重绘重排</h4><blockquote>
+<p>DOM变化使浏览器重新计算元素几何属性，其他元素受到影响。需要重新构造DOM 就叫重排，受影响的部分重新绘制</p>
+</blockquote>
+<ul>
+<li>引发原因：DOM元素添加删除 元素尺寸变化 浏览器窗口变化</li>
+<li>避免：table布局 修改样式尽量css用选择器 布局信息改变不查询</li>
+</ul>
+<hr>
+<h3 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h3><h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><ol>
+<li>加载优化：减少http请求(删除不必要图像注释 合并css js) 、懒加载 、css头js尾、iframe</li>
+<li>运行优化：避免重绘重排 尽量使用原生方法 避免空的src</li>
+<li>防抖节流，html内联样式尽量少，尽量用id选择器</li>
+</ol>
+<hr>
+<h4 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h4><ol>
+<li>XSS 注入恶意代码使用户执行，可能会拿到cookie Localstorage,发起非本意行为，DDos攻击</li>
+</ol>
+<ul>
+<li>分为存储=&gt;最严重 DOM（js自身的漏洞 反射型（url注入</li>
+<li>例如 反射型：我点了陌生链接 正常访问服务器，服务器返回了xss脚本和正常页面，执行xss脚本就访问量恶意服务器</li>
+<li>解决：过滤非法字符，输入长度限制，跳转链接监测</li>
+</ul>
+<ol start="2">
+<li>CSRF 跨站请求伪造 B站向A站发恶意请求，因为cookie A以为是用户发的就执行了。</li>
+</ol>
+<ul>
+<li>解决 尽量不用get，关键操作需要发验证码</li>
+</ul>
+<hr>
+<h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><h4 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h4><ul>
+<li>同源策略 ：协议 域名 端口号必须相同才可以访问localStroge、cookie等</li>
+<li>针对js和ajax的<br><code>&lt;img src='xxx'&gt;</code><br><code>&lt;link href='xxx'&gt;</code><br><code>&lt;script src='xxx'&gt;</code></li>
+</ul>
+<ol>
+<li>JSONP就是利用了html标签</li>
+<li>Node中间件代理，利用了服务器之间没有同源策略，把请求发给服务器，服务器请求后返回给客户</li>
+</ol>
+<hr>
+<h4 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h4><table>
+<thead>
+<tr>
+<th align="center">1xx</th>
+<th align="center">继续操作</th>
+<th align="center">需要进一步操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">100</td>
+<td align="center">continue</td>
+<td align="center">客户继续请求</td>
+</tr>
+<tr>
+<td align="center">101</td>
+<td align="center">切换协议</td>
+<td align="center">可能是协议版本过低</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">2xx</th>
+<th align="center">接受请求</th>
+<th align="center">请求已成功被服务器接收、理解、并接受</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">200</td>
+<td align="center">成功</td>
+<td align="center">服务器提供了请求的网页</td>
+</tr>
+<tr>
+<td align="center">201</td>
+<td align="center">用户新建或修改数据成功</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">202</td>
+<td align="center">接受请求尚未处理</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">204</td>
+<td align="center">无内容</td>
+<td align="center">已经接受请求，但无返回信息</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">3xx</th>
+<th align="center">重定向</th>
+<th align="center">表示要完成请求，需要进一步操作。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">301</td>
+<td align="center">永久重定向</td>
+<td align="center">自动返回新地址</td>
+</tr>
+<tr>
+<td align="center">302/7</td>
+<td align="center">临时重定向</td>
+<td align="center">仍使用原来的</td>
+</tr>
+<tr>
+<td align="center">306</td>
+<td align="center">已被废弃</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">4xx</th>
+<th align="center">客户端错误</th>
+<th align="center">语法错误或无法完成</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">400</td>
+<td align="center">语法错误</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">401</td>
+<td align="center">要求客户身份认证</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">403</td>
+<td align="center">服务器理解 但拒绝</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">404</td>
+<td align="center">无法找到资源</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">408</td>
+<td align="center">请求超时</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">5xx</th>
+<th align="center">服务端错误</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">500</td>
+<td align="center">服务器内部错误</td>
+</tr>
+<tr>
+<td align="center">501</td>
+<td align="center">服务器不支持请求的功能</td>
+</tr>
+<tr>
+<td align="center">504</td>
+<td align="center">未能及时获取请求</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="http与https"><a href="#http与https" class="headerlink" title="http与https"></a>http与https</h4><ul>
+<li>http是明文传输，超文本传输协议。https加密传输 更安全</li>
+<li>http应用层 https传输层</li>
+<li>http标准端口80 https 443</li>
+</ul>
 
                 
             </div>
@@ -991,18 +1265,17 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/082745272.html">
+                <a href="/2022/083028513.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="前端面试学习">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="blind75记录">
                         
-                        <span class="card-title">前端面试学习</span>
+                        <span class="card-title">blind75记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1012,9 +1285,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-27
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-30
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1023,7 +1296,6 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
