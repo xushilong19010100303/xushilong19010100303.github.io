@@ -4,8 +4,18 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, 天下无敌">
-    <meta name="description" content="用于学习 随便侵权">
+    <meta name="keywords" content="Blind75 Day3, 天下无敌">
+    <meta name="description" content="
+旋转数组搜索2.0
+
+
+输入：nums = [4,5,6,7,0,1,2], target = 0输出：4
+
+
+思路 分为中点左右两种，每种依次三种
+
+class Solution {
+    public int search(int[">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +27,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签 | 天下无敌</title>
+    <title>Blind75 Day3 | 天下无敌</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -367,12 +377,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">tags</h1>
+                    <h1 class="description center-align post-title">Blind75 Day3</h1>
                 </div>
             </div>
         </div>
@@ -408,21 +418,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-17
+                    2022-09-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-17
+                    2022-09-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    644
                 </div>
                 
 
@@ -444,7 +454,165 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <ol start="8">
+<li>旋转数组搜索2.0</li>
+</ol>
+<blockquote>
+<p>输入：nums = [4,5,6,7,0,1,2], target = 0<br>输出：4</p>
+</blockquote>
+<blockquote>
+<p>思路 分为中点左右两种，每种依次三种</p>
+</blockquote>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+       <span class="token keyword">int</span> right <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+       <span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>left<span class="token operator">+</span>right<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+       <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">1</span><span class="token operator">&amp;&amp;</span>target <span class="token operator">==</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+       <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+       <span class="token keyword">while</span><span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span>
+       <span class="token punctuation">{</span>
+           
+           <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">>=</span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">//中点在左</span>
+           <span class="token punctuation">{</span>
+               <span class="token keyword">if</span><span class="token punctuation">(</span>target<span class="token operator">>=</span>nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token operator">&amp;&amp;</span>target<span class="token operator">&lt;=</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//target在左--中点</span>
+                right <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+                <span class="token keyword">else</span>
+                left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+           <span class="token punctuation">}</span>
+           <span class="token keyword">else</span>           <span class="token comment" spellcheck="true">//中点在右</span>
+           <span class="token punctuation">{</span>
+               <span class="token keyword">if</span><span class="token punctuation">(</span>target<span class="token operator">></span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&amp;&amp;</span>target<span class="token operator">&lt;=</span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//target在中--右点</span>
+                left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token keyword">else</span>
+                right <span class="token operator">=</span> mid <span class="token punctuation">;</span>
+           <span class="token punctuation">}</span>
+           mid <span class="token operator">=</span> <span class="token punctuation">(</span>left<span class="token operator">+</span>right<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>target <span class="token operator">==</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span>                        <span class="token comment" spellcheck="true">//这里超级重要</span>
+               <span class="token keyword">return</span> mid<span class="token punctuation">;</span>
+               <span class="token keyword">if</span><span class="token punctuation">(</span>target <span class="token operator">==</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">)</span>
+               <span class="token keyword">return</span> left<span class="token punctuation">;</span>
+               <span class="token keyword">if</span><span class="token punctuation">(</span>target <span class="token operator">==</span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span>
+               <span class="token keyword">return</span> right<span class="token punctuation">;</span>
+        
+       <span class="token punctuation">}</span>
+       <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<ol start="9">
+<li>三数之和</li>
+</ol>
+<blockquote>
+<p>输入：nums = [-1,0,1,2,-1,-4]<br>输出：[[-1,-1,2],[-1,0,1]]<br>解释：和为0 且不能重复</p>
+</blockquote>
+<blockquote>
+<p>双指针，仅遍历a,对于每个b,取另一头的c,如果和较小，b右移，否则c左移，直至相撞为止。</p>
+</blockquote>
+<blockquote>
+<p>学习的知识 ： break 跳出所有循环  continue跳出当前这次循环<br><code>ArrayList&lt;List&lt;Integer&gt;&gt; ans = new ArrayList&lt;List&lt;Integer&gt;&gt;();</code>实现<code>[[ ],[ ]]</code></p>
+</blockquote>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> List<span class="token operator">&lt;</span>List<span class="token operator">&lt;</span>Integer<span class="token operator">>></span> <span class="token function">threeSum</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        List<span class="token operator">&lt;</span>List<span class="token operator">&lt;</span>Integer<span class="token operator">>></span> ans <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        Arrays<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 排序</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>a <span class="token operator">&lt;</span> len<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">;</span>a<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+          
+           <span class="token keyword">int</span> b <span class="token operator">=</span> a<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+           <span class="token keyword">int</span> c <span class="token operator">=</span> len<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+           <span class="token keyword">while</span><span class="token punctuation">(</span>b<span class="token operator">&lt;</span>c<span class="token punctuation">)</span>
+           <span class="token punctuation">{</span>   
+               <span class="token keyword">int</span> sum <span class="token operator">=</span> nums<span class="token punctuation">[</span>a<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>b<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">;</span>
+               <span class="token keyword">if</span><span class="token punctuation">(</span>sum<span class="token operator">==</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span><span class="token operator">!</span>ans<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>b<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                ans<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>b<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                   <span class="token comment" spellcheck="true">//去重</span>
+               <span class="token keyword">if</span><span class="token punctuation">(</span>sum<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span>
+               c<span class="token operator">--</span><span class="token punctuation">;</span>
+               <span class="token keyword">else</span> b<span class="token operator">++</span><span class="token punctuation">;</span>
+           <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<ol start="10">
+<li>盛水最多的容器<br><img src="https://aliyun-lc-upload.oss-cn-hangzhou.aliyuncs.com/aliyun-lc-upload/uploads/2018/07/25/question_11.jpg" alt="图片"></li>
+</ol>
+<blockquote>
+<p>输入高度数组，长度就是索引差</p>
+</blockquote>
+<blockquote>
+<p>思路 ： 双指针，因为收缩时候长度减小，所以哪边低就往哪边收缩，得到的必然是最大值</p>
+</blockquote>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">maxArea</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> height<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> L <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> R <span class="token operator">=</span> height<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>L<span class="token operator">&lt;</span>R<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>   
+           <span class="token keyword">if</span><span class="token punctuation">(</span>height<span class="token punctuation">[</span>L<span class="token punctuation">]</span><span class="token operator">&lt;</span>height<span class="token punctuation">[</span>R<span class="token punctuation">]</span><span class="token punctuation">)</span>      <span class="token comment" spellcheck="true">//左边低，就右移找</span>
+           <span class="token punctuation">{</span> 
+              index <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span>height<span class="token punctuation">[</span>L<span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">(</span>R<span class="token operator">-</span>L<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              L<span class="token operator">++</span><span class="token punctuation">;</span>
+           <span class="token punctuation">}</span>  
+
+           <span class="token keyword">else</span> 
+           <span class="token punctuation">{</span>
+               index <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span>height<span class="token punctuation">[</span>R<span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">(</span>R<span class="token operator">-</span>L<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+               R<span class="token operator">--</span><span class="token punctuation">;</span>
+           <span class="token punctuation">}</span>          
+        <span class="token punctuation">}</span> <span class="token keyword">return</span> index<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<ol start="11">
+<li>两整数之和</li>
+</ol>
+<blockquote>
+<p>不用+ - 求和</p>
+</blockquote>
+<blockquote>
+<p>思路：异或用于无符号加，相与找到进位的地方，左移一位填1，直至进位是0</p>
+</blockquote>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getSum</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token comment" spellcheck="true">//异或--无进位加法</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>b <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> carry <span class="token operator">=</span> <span class="token punctuation">(</span>a <span class="token operator">&amp;</span> b<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//利用与运算找到进位的位，左移一位就是需要的部分</span>
+            a <span class="token operator">=</span> a <span class="token operator">^</span> b<span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">//无进位加法，如果进位再次是1，运行下一次循环，直到进位全0</span>
+            b <span class="token operator">=</span> carry<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<ol start="12">
+<li>位1的个数<blockquote>
+<p>输入：00000000000000000000000000001011<br>输出：3 (3个1)</p>
+</blockquote>
+</li>
+</ol>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">hammingWeight</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">32</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">&amp;</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;&lt;</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                ret<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//偷懒写法 Integer.bitCount(n);</span>
+</code></pre>
+<hr>
+
                 
             </div>
             <hr/>
@@ -470,7 +638,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xsl66.cn/tags/index.html">http://xsl66.cn/tags/index.html</a>
+                    <a href="http://xsl66.cn/2022/090435821.html">http://xsl66.cn/2022/090435821.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -580,7 +748,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Wed Aug 17 2022 16:31:24 GMT+0800',
+    id: 'Sun Sep 04 2022 13:49:11 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -613,18 +781,17 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2022/090534945.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="tags">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Blind75-Day4">
                         
-                        <span class="card-title">tags</span>
+                        <span class="card-title">Blind75-Day4</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -634,9 +801,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-17
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-05
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -645,7 +812,6 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -653,16 +819,16 @@ gitment.render('gitment-content');
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2022/083113711.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="tags">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="vue草泥马的踩坑">
                         
-                        <span class="card-title">tags</span>
+                        <span class="card-title">vue草泥马的踩坑</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -673,7 +839,7 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-31
                             </span>
                         <span class="publish-author">
                             
@@ -683,7 +849,6 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
