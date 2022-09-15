@@ -4,11 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="华为机试笔记Day4, 天下无敌">
-    <meta name="description" content="哈希（散列）解决的问题按照输入数据返回一个整数，这个整数必须是唯一的。不一定是索引实现数据和存储位置的一一对应。例如 ：对一个数据进行一些操作，返回一个数(存储位置)就行。可能会出现冲突。
+    <meta name="keywords" content="前端学习Day2, 天下无敌">
+    <meta name="description" content="Promise写法
+then的参数就是promise对象定义的方法的入参
 
-设计散列函数直接定址
-哈希表中存放该数据出现了几">
+
+async如果返回值不是promise就改为promise对象且成功，正确返回promise对象就失败
+
+
+async简写了Promise对象  await+Pr">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +24,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>华为机试笔记Day4 | 天下无敌</title>
+    <title>前端学习Day2 | 天下无敌</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -370,12 +374,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">华为机试笔记Day4</h1>
+                    <h1 class="description center-align post-title">前端学习Day2</h1>
                 </div>
             </div>
         </div>
@@ -411,21 +415,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-23
+                    2022-09-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-24
+                    2022-09-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    569
                 </div>
                 
 
@@ -447,187 +451,85 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="哈希（散列）"><a href="#哈希（散列）" class="headerlink" title="哈希（散列）"></a>哈希（散列）</h3><h4 id="解决的问题"><a href="#解决的问题" class="headerlink" title="解决的问题"></a>解决的问题</h4><p>按照输入数据返回一个整数，这个整数必须是唯一的。<strong>不一定是索引</strong><br>实现数据和存储位置的一一对应。<br>例如 ：<br>对一个数据进行一些操作，返回一个数(存储位置)就行。可能会出现冲突。</p>
-<hr>
-<h4 id="设计散列函数"><a href="#设计散列函数" class="headerlink" title="设计散列函数"></a>设计散列函数</h4><h5 id="直接定址"><a href="#直接定址" class="headerlink" title="直接定址"></a>直接定址</h5><blockquote>
-<p>哈希表中存放该数据出现了几次，映射到对应的人之类这样的。<br><strong>问题</strong> ： 如果数据是电话号码之类的不方便，下标太大了。</p>
+                <h3 id="Promise写法"><a href="#Promise写法" class="headerlink" title="Promise写法"></a>Promise写法</h3><blockquote>
+<p>then的参数就是promise对象定义的方法的入参</p>
 </blockquote>
-<hr>
-<h5 id="平方取中"><a href="#平方取中" class="headerlink" title="平方取中"></a>平方取中</h5><blockquote>
-<p>把输入数据平方，取中间的某几位数。<br><strong>问题</strong> ：可能会出现冲突</p>
+<blockquote>
+<p>async如果返回值不是promise就改为promise对象且成功，正确返回promise对象就失败</p>
 </blockquote>
-<hr>
-<h5 id="取余"><a href="#取余" class="headerlink" title="取余"></a>取余</h5><p>顾名思义<br><strong>问题</strong> ： 同上</p>
-<hr>
-<h4 id="冲突排除"><a href="#冲突排除" class="headerlink" title="冲突排除"></a>冲突排除</h4><h5 id="开放地址"><a href="#开放地址" class="headerlink" title="开放地址"></a>开放地址</h5><blockquote>
-<ul>
-<li>线性探测 ：直接放后面那个</li>
-<li>二次探测 ：放后面第1、4、9、16个</li>
-<li>再哈希 ：使用多个散列函数</li>
-</ul>
+<blockquote>
+<p>async简写了Promise对象  await+Promise对象简写了.then</p>
 </blockquote>
-<h5 id="链地址"><a href="#链地址" class="headerlink" title="链地址"></a>链地址</h5><blockquote>
-<p>采用链表思想，不直接放在地址，放在指向这个地址的一个地方。<br>重复的话就接着向后链。</p>
+<blockquote>
+<p>同步 process.nextTick  微任务Promise.then  宏任务setTimeout ajax</p>
 </blockquote>
-<hr>
-<h4 id="HJ8-合并表记录"><a href="#HJ8-合并表记录" class="headerlink" title="HJ8 合并表记录"></a>HJ8 合并表记录</h4><h5 id="原思路"><a href="#原思路" class="headerlink" title="原思路"></a>原思路</h5><p>nextInt循环读取两个数组 冒泡排序两数组，整理为顺序；比较当前index与前面index<br>相同则value更新，否则输出前一个，循环结束输出最后一个。</p>
-<h5 id="map函数常用语法"><a href="#map函数常用语法" class="headerlink" title="map函数常用语法"></a>map函数常用语法</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashMap<span class="token punctuation">;</span>
-HashMap<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span> String<span class="token operator">></span> A <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span> String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//固定写法,可以是String Bolean等</span>
+<blockquote>
+<p>defer 推迟的意思 下载完等HTML后执行</p>
+</blockquote>
+<blockquote>
+<p>三种状态：pending fullfiled rejected 初始化 成功 失败<br><code>Promise.race([p1, p2]) Promise.all([p1, p2])</code></p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve，reject<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//resolve随便写个别的单词都行 表示入参</span>
+    <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">"HELLO world"</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>                        <span class="token comment" spellcheck="true">//可简写为p.resolve("hello world")</span>
 
-     A<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-     A<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token string">"qwe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-     A<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token string">"李海波"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-     A<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>A<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>A<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span>Integer i <span class="token operator">:</span> A<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//输出key以及查询的value;</span>
-    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"key: "</span> <span class="token operator">+</span> i <span class="token operator">+</span> <span class="token string">" value: "</span> <span class="token operator">+</span> A<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span>String value<span class="token operator">:</span> A<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">// 输出每一个value</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>value <span class="token operator">+</span> <span class="token string">", "</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+p<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>           <span class="token comment" spellcheck="true">//只会执行第一个状态</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>data1<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data1<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">finally</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"最终"</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">1</span> <span class="token comment" spellcheck="true">//返回promise对象 fun().then((data)=&gt;&amp;#123;console.log(data);&amp;#125;)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//与下面这个是一样的</span>
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>res<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>res<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">await</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//拿到1</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 <hr>
-<h5 id="新解决思路"><a href="#新解决思路" class="headerlink" title="新解决思路"></a>新解决思路</h5><pre class=" language-java"><code class="language-java">      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> tableSize<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token keyword">int</span> key <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token keyword">int</span> value <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token keyword">if</span> <span class="token punctuation">(</span>table<span class="token punctuation">.</span><span class="token function">containsKey</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-              table<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> table<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-              table<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
-</code></pre>
-<hr>
-<h4 id="HJ9提取不重复的数"><a href="#HJ9提取不重复的数" class="headerlink" title="HJ9提取不重复的数"></a>HJ9提取不重复的数</h4><blockquote>
-<p>思路和上一题差不多。主要是注意Put 不是 set ，然后value一般是自己定义往里填的<br>后来的会覆盖前面的，keySet values两个循环输出方法。</p>
+<h3 id="post和get"><a href="#post和get" class="headerlink" title="post和get"></a>post和get</h3><blockquote>
+<p>都是http请求，get是检索与获取，post是创建和更新<br>get可以刷新因为可以缓存 请求数据长度有限（url有限） get安全性较差</p>
 </blockquote>
-<pre class=" language-java"><code class="language-java">          <span class="token keyword">if</span><span class="token punctuation">(</span>A<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> 
-          System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-          <span class="token comment" spellcheck="true">//利用HashSet的不重复性！！！！！</span>
-</code></pre>
 <hr>
-<h4 id="HJ10字符个数统计"><a href="#HJ10字符个数统计" class="headerlink" title="HJ10字符个数统计"></a>HJ10字符个数统计</h4><blockquote>
-<p>妈的 记住br.read调用一次就会读取一次，不可以作为循环或判断条件。</p>
+<h3 id="position"><a href="#position" class="headerlink" title="position"></a>position</h3><blockquote>
+<p>默认stastic<br>还有relative 设置left top等相对于原来偏移 原位置不会被占<br>absolute     也可以偏移，但是会移除正常文档流，原位置会被占领<br>fixed<br>sticky 距离浏览器左上右下多少时fixed 其余relative<br>z-index越大，越往上层</p>
 </blockquote>
-<h5 id="HashSet类"><a href="#HashSet类" class="headerlink" title="HashSet类"></a>HashSet类</h5><pre class=" language-java"><code class="language-java">    <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashSet<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 引入 HashSet 类</span>
-    HashSet<span class="token operator">&lt;</span>String<span class="token operator">></span> A <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    A<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    A<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//重复元素不添加；</span>
-    A<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"bcd"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//false</span>
-    A<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    A<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>String i <span class="token operator">:</span> A<span class="token punctuation">)</span> 
-    <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>                              <span class="token comment" spellcheck="true">//迭代输出</span>
-</code></pre>
-<h3 id="ASCII码"><a href="#ASCII码" class="headerlink" title="ASCII码"></a>ASCII码</h3><p><strong>常见的速查</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">字符</th>
-<th align="center">ASCII码</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">空字符</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">换行</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">回车</td>
-<td align="center">13</td>
-</tr>
-<tr>
-<td align="center">空格</td>
-<td align="center">32</td>
-</tr>
-<tr>
-<td align="center">0-9</td>
-<td align="center">48-57</td>
-</tr>
-<tr>
-<td align="center">A-Z</td>
-<td align="center">65-90</td>
-</tr>
-<tr>
-<td align="center">a-z</td>
-<td align="center">97-122</td>
-</tr>
-<tr>
-<td align="center">其他</td>
-<td align="center">其余到127</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://xinzhi.wenda.so.com/a/1524302199615149">更多</a></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
 <hr>
-<h3 id="HJ11-数字颠倒"><a href="#HJ11-数字颠倒" class="headerlink" title="HJ11 数字颠倒"></a>HJ11 数字颠倒</h3><p>do-while循环</p>
-<pre class=" language-java"><code class="language-java">   <span class="token keyword">int</span> i <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-   <span class="token keyword">do</span><span class="token punctuation">{</span>
-    i<span class="token operator">++</span>
-   <span class="token punctuation">}</span> <span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//注意while后面加分号，循环体在do后面。</span>
+<h3 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a>keep-alive</h3><p>替代v-show</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keep-alive</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span><span class="token punctuation">&gt;</span></span> 要缓存的内容 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-view</span><span class="token punctuation">&gt;</span></span>&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>keep-alive</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <hr>
-<h3 id="String类的方法"><a href="#String类的方法" class="headerlink" title="String类的方法"></a>String类的方法</h3><h4 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h4><blockquote>
-<p>String(字符串)<br>他有很多方法，方法都是有括号的，需要先实例化String s = <strong>“abCD!&amp;?123”</strong><br>常见方法</p>
+<h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h3><p>sessionStorage  本地存储会话数据 会话结束后就销毁<br>localStorage    本地持久化，除非手动删除<br>cookie          存储在浏览器的一小段数据，每次同源请求http都发送来一份<br>memory cache    不受max-age no-cache影响</p>
+<hr>
+<h3 id="computed和watch"><a href="#computed和watch" class="headerlink" title="computed和watch"></a>computed和watch</h3><blockquote>
+<p>computed 购物车总金额，只有依赖的数据发生变化才更新，否则直接读取缓存 不支持异步<br>watch 不支持缓存，支持异步，监听值的变化执行回调</p>
 </blockquote>
-<pre class=" language-java"><code class="language-java">String s <span class="token operator">=</span> <span class="token string">"abCD!&amp;?123"</span>
-<span class="token number">1</span> s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>              <span class="token comment" spellcheck="true">//返回&amp; </span>
-<span class="token number">2</span> s<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span>       <span class="token comment" spellcheck="true">//返回8,因为比abc长8位，否则返回首位ASCII差,可IgnoreCase!</span>
-<span class="token number">3</span> s<span class="token punctuation">.</span><span class="token function">contact</span><span class="token punctuation">(</span><span class="token string">"QWE"</span><span class="token punctuation">)</span>         <span class="token comment" spellcheck="true">//拼接到后面 </span>
-<span class="token number">4</span> s<span class="token punctuation">.</span><span class="token function">contentEquals</span><span class="token punctuation">(</span><span class="token string">"abC"</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">//返回true 括号里必须是Stringbuffer类</span>
-<span class="token number">5</span> s<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true">//返回true </span>
-<span class="token number">6</span> s<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span>             <span class="token comment" spellcheck="true">//返回哈希码(ASCII，</span>
-<span class="token number">7</span> s<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>         <span class="token comment" spellcheck="true">//第6个位置向后'1'的索引7，也可用ASCII值，还可"123"，还可lastIndexOf</span>
-<span class="token number">8</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment" spellcheck="true">//返回10 </span>
-<span class="token number">9</span> s<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'A'</span><span class="token punctuation">)</span>       <span class="token comment" spellcheck="true">//a替换为A </span>
-                           <span class="token comment" spellcheck="true">//replaceAll(正则，"newstr") replaceFirst</span>
-<span class="token number">10</span> s<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"D"</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true">//返回的是String[]!!!!! 份数是limit 不够就不处理。</span>
-<span class="token number">11</span> s<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true">//返回"bCD"</span>
-<span class="token number">12</span> s<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>         <span class="token comment" spellcheck="true">// 转小写，toUpperCase</span>
-<span class="token number">13</span> s<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token string">'1'</span>，<span class="token string">'s'</span>，<span class="token string">'!'</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//返回1s! 即任意类型转字符串表达形式</span>
-<span class="token number">14</span> s<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span>             <span class="token comment" spellcheck="true">//false</span>
-</code></pre>
-<p>附：<br>hashCode方法 $\sum\limits_{i=0}^{n-1}s[i]*31^i$</p>
-<h4 id="equals-与-x3D-x3D"><a href="#equals-与-x3D-x3D" class="headerlink" title="equals 与 =="></a>equals 与 ==</h4><pre class=" language-java"><code class="language-java">String s1 <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span>              <span class="token comment" spellcheck="true">// String 直接创建</span>
-String s2 <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span>              <span class="token comment" spellcheck="true">// String 直接创建</span>
-String s3 <span class="token operator">=</span> s1<span class="token punctuation">;</span>                   <span class="token comment" spellcheck="true">// 相同引用</span>
-String s4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// String 对象创建</span>
-String s5 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// String 对象创建</span>
-
-s1 <span class="token operator">==</span> s2<span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">// true, s1 和 s2 都是直接创建</span>
-s2 <span class="token operator">==</span> s3<span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">// true </span>
-s1 <span class="token operator">==</span> s4<span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">// false, 不同引用地址</span>
-s4 <span class="token operator">==</span> s5<span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">// false, 堆中不同引用地址</span>
- 
-s1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// true, 相同内容</span>
-s1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// true, 相同内容</span>
-s4<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>s5<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// true, 相同内容</span>
-</code></pre>
-<p>equals也有IgnoreCase</p>
 <hr>
-<h4 id="HJ1-字符串最后一个单词的长度"><a href="#HJ1-字符串最后一个单词的长度" class="headerlink" title="HJ1 字符串最后一个单词的长度"></a>HJ1 字符串最后一个单词的长度</h4><pre class=" language-java"><code class="language-java">    String str <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    String<span class="token punctuation">[</span><span class="token punctuation">]</span> s <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-    <span class="token keyword">int</span> length <span class="token operator">=</span> s<span class="token punctuation">[</span>s<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//s[0]是hello </span>
-    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h3><pre class=" language-javascript"><code class="language-javascript"> <span class="token comment" spellcheck="true">//父组件</span>
+ children <span class="token punctuation">:</span>message <span class="token operator">=</span> <span class="token string">"456"</span>  @change <span class="token operator">=</span> <span class="token string">"message = $event"</span>
+ <span class="token comment" spellcheck="true">//子组件</span>
+ props <span class="token punctuation">[</span><span class="token string">'message'</span><span class="token punctuation">]</span>
+ <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'chage'</span><span class="token punctuation">,</span><span class="token string">'123'</span><span class="token punctuation">)</span>
 </code></pre>
-<p>主要学习的是String[]是个数组类型，划分后不是按char索引，而是按单词索引</p>
-<hr>
-<h4 id="HJ12-字符串倒转"><a href="#HJ12-字符串倒转" class="headerlink" title="HJ12 字符串倒转"></a>HJ12 字符串倒转</h4><p>侮辱智商。。。直接逆序循环解决了。</p>
-<h4 id="HJ13-句子倒序输出"><a href="#HJ13-句子倒序输出" class="headerlink" title="HJ13 句子倒序输出"></a>HJ13 句子倒序输出</h4><p>也是侮辱智商的。。。</p>
-<h3 id="明天预备学习的内容"><a href="#明天预备学习的内容" class="headerlink" title="明天预备学习的内容"></a>明天预备学习的内容</h3><ul>
-<li>正则表达式</li>
-<li>Arrays类</li>
-<li>刷到HJ25</li>
-</ul>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span>message
+</code></pre>
+<p><code>v-bind = "$attrs</code></p>
 
                 
             </div>
@@ -654,7 +556,7 @@ s4<span class="token punctuation">.</span><span class="token function">equals</s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xsl66.cn/2022/082322351.html">http://xsl66.cn/2022/082322351.html</a>
+                    <a href="http://xsl66.cn/2022/091319592.html">http://xsl66.cn/2022/091319592.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -764,7 +666,7 @@ s4<span class="token punctuation">.</span><span class="token function">equals</s
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Tue Aug 23 2022 14:31:47 GMT+0800',
+    id: 'Tue Sep 13 2022 22:35:42 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -797,54 +699,18 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/08257096.html">
+                <a href="/2022/091319592.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="力扣Day1">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="前端学习Day2">
                         
-                        <span class="card-title">力扣Day1</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-25
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Father XSL
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/082136129.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="华为机试Day3">
-                        
-                        <span class="card-title">华为机试Day3</span>
+                        <span class="card-title">前端学习Day2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -855,7 +721,45 @@ gitment.render('gitment-content');
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Father XSL
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/0909866.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="实习踩坑指南">
+                        
+                        <span class="card-title">实习踩坑指南</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-09
                             </span>
                         <span class="publish-author">
                             
@@ -982,13 +886,6 @@ gitment.render('gitment-content');
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-    });
-</script>
 
 
 
